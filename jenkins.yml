@@ -1,0 +1,22 @@
+jenkins:
+  remotingSecurity:
+    enabled: true
+  authorizationStrategy:
+    roleBased:
+      roles:
+        global:
+          - name: "admin"
+            description: "master"
+            permissions:
+              - "Overall/Administer"
+            assignments:
+              - "admin"
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - name: "admin"
+          id: "admin"
+          password: "admin"
+jobs:
+  - file: ./jobs_dsl.groovy
