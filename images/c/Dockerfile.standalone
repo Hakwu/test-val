@@ -1,9 +1,0 @@
-FROM gcc
-
-COPY . .
-
-RUN make
-
-RUN rm *.c
-
-CMD ./compiled-app
